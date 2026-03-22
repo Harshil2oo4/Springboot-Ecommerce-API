@@ -51,3 +51,35 @@ This project provides REST APIs for managing products, users, orders, authentica
 ---
 
 ## 📁 Project Structure
+
+Springboot-Ecommerce-API/
+│
+├── src/
+│ ├── main/
+│ │ ├── java/com/ecommerce/
+│ │ │ ├── controller/
+│ │ │ ├── service/
+│ │ │ ├── repository/
+│ │ │ ├── model/
+│ │ │ └── config/
+│ │ └── resources/
+│ │ ├── application.properties
+│ │
+├── pom.xml
+└── README.md
+
+
+---
+
+## ⚙️ Setup & Installation
+
+### 1️⃣ Clone Repository
+```bash
+git clone https://github.com/your-username/Springboot-Ecommerce-API.git
+cd Springboot-Ecommerce-API
+
+spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce
+spring.datasource.username=root
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
