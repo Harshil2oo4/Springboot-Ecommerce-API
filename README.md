@@ -1,85 +1,187 @@
-# 🛒 Spring Boot E-Commerce API
+# 🛒 E-Commerce Application (Spring Boot)
 
-A full-stack E-Commerce application built using **Spring Boot (Backend)** and customizable frontend with **HTML, CSS, and JavaScript / React**.
+A backend system built using **Spring Boot** for managing an **E-Commerce platform**, including products, users, cart, and order processing through REST APIs.
 
-This project provides REST APIs for managing products, users, orders, authentication, and more.
+This project demonstrates real-world backend development concepts like API design, database management, and business logic implementation.
 
 ---
 
 ## 🚀 Features
 
-### 🔐 Authentication & Authorization
-- User Registration & Login
-- JWT-based authentication
-- Role-based access (Admin / User)
+### 👤 User Management
+
+* User registration & login
+* Manage user details
 
 ### 📦 Product Management
-- Add / Update / Delete products
-- View all products
-- Filter products by category
 
-### 🛍️ Cart & Orders
-- Add items to cart
-- Remove items from cart
-- Place orders
-- Order history
+* Add products
+* View all products
+* Update product details
+* Delete products
 
-### 👤 User Management
-- Profile management
-- Address handling
+### 🛒 Cart Management
+
+* Add items to cart
+* Remove items from cart
+* View cart items
+
+### 📦 Order Management
+
+* Place orders
+* View order history
 
 ---
 
 ## 🏗️ Tech Stack
 
 ### Backend
-- Java
-- Spring Boot
-- Spring Security
-- JWT Authentication
-- Hibernate / JPA
-- Maven
+
+* Java
+* Spring Boot
+* Spring Data JPA
+* Hibernate
+* Maven
 
 ### Database
-- MySQL / MongoDB (based on config)
 
-### Frontend (Optional Integration)
-- HTML
-- CSS (Custom Styling)
-- JavaScript / React
+* MySQL / H2 (configurable)
 
 ---
 
 ## 📁 Project Structure
 
-Springboot-Ecommerce-API/
+```id="r8k3zn"
+Ecommerce-Application/
 │
 ├── src/
-│ ├── main/
-│ │ ├── java/com/ecommerce/
-│ │ │ ├── controller/
-│ │ │ ├── service/
-│ │ │ ├── repository/
-│ │ │ ├── model/
-│ │ │ └── config/
-│ │ └── resources/
-│ │ ├── application.properties
-│ │
+│   ├── main/
+│   │   ├── java/com/ecommerce/
+│   │   │   ├── controller/
+│   │   │   ├── service/
+│   │   │   ├── repository/
+│   │   │   ├── model/
+│   │   │   └── config/
+│   │   └── resources/
+│   │       ├── application.properties
+│
 ├── pom.xml
 └── README.md
-
+```
 
 ---
 
 ## ⚙️ Setup & Installation
 
 ### 1️⃣ Clone Repository
-```bash
-git clone https://github.com/your-username/Springboot-Ecommerce-API.git
-cd Springboot-Ecommerce-API
 
-spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce
+```bash id="k3m9yt"
+git clone https://github.com/your-username/springboot-ecommerce-api.git
+cd springboot-ecommerce-api
+```
+
+---
+
+### 2️⃣ Configure Database
+
+Update `application.properties`:
+
+```properties id="z1x7qp"
+spring.datasource.url=jdbc:mysql://localhost:3306/ecommercedb
 spring.datasource.username=root
+spring.datasource.password=yourpassword
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+```
+
+---
+
+### 3️⃣ Run Application
+
+```bash id="b2c8vl"
+./mvnw spring-boot:run
+```
+
+---
+
+## 🔌 API Endpoints
+
+### 👤 User APIs
+
+| Method | Endpoint            | Description   |
+| ------ | ------------------- | ------------- |
+| POST   | /api/users/register | Register user |
+| POST   | /api/users/login    | Login user    |
+
+---
+
+### 📦 Product APIs
+
+| Method | Endpoint           | Description      |
+| ------ | ------------------ | ---------------- |
+| GET    | /api/products      | Get all products |
+| POST   | /api/products      | Add product      |
+| PUT    | /api/products/{id} | Update product   |
+| DELETE | /api/products/{id} | Delete product   |
+
+---
+
+### 🛒 Cart APIs
+
+| Method | Endpoint              | Description      |
+| ------ | --------------------- | ---------------- |
+| GET    | /api/cart             | Get cart items   |
+| POST   | /api/cart/add         | Add to cart      |
+| DELETE | /api/cart/remove/{id} | Remove from cart |
+
+---
+
+### 📦 Order APIs
+
+| Method | Endpoint    | Description     |
+| ------ | ----------- | --------------- |
+| POST   | /api/orders | Place order     |
+| GET    | /api/orders | Get user orders |
+
+---
+
+## 🔄 Application Flow
+
+```id="x6t2kp"
+1. User registers / logs in
+2. User browses products
+3. User adds items to cart
+4. User places order
+5. Order is stored in database
+```
+
+---
+
+## 🧪 Testing APIs
+
+Use:
+
+* Postman
+* Thunder Client (VS Code)
+
+---
+
+## 📌 Future Improvements
+
+* JWT Authentication & Security
+* Payment Gateway Integration
+* Admin Dashboard
+* Product Reviews & Ratings
+
+---
+
+## 👨‍💻 Author
+
+Harshil Gorasiya
+
+---
+
+## ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!
